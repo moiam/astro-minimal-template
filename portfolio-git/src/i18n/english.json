@@ -1,0 +1,42 @@
+{
+    "intro": {
+        "presentation": "Hi, I'm Moisés",
+        "job": "Frontend Developer Junior",
+        "intro": " with 1 year of experience. Currently working as a freelancer, and in my spare time I compete in chess and play the guitar."
+    },
+    "experience": "Experience",
+    "cards": {
+        "chess_card": "Design and development of a web application with MongoDB database for tournament and player queries. Main chess club of the city.",
+        "java_card": "Application for client and order management, with role assignment system using JPA with Hibernate, and MySQL relational database."
+    },
+    "education": "Education",
+    "education_items": {
+        "student": {
+            "title": "Bachelor's Degree in Physics",
+            "time": "Currently"
+        },
+        "certificate": {
+            "title": "JAVA OOP Certification",
+            "time": "September, 2023",
+            "description": "Creation of an application for order and client management with MySQL database.",
+            "button": "View Certification"
+        },
+        "english": {
+            "title": "Advanced English Studies",
+            "time": "October, 2023",
+            "description": "Preparation for C1 English certification"
+        }
+    },
+    "contact": "Contact",
+    "placeholder": {
+        "email": "your@email.com",
+        "text": "Write your message here...",
+        "button": {
+            "send": "Send Message",
+            "sending": "Sending...",
+            "sent": "Message Sent!"
+        }
+    },
+    "resume": "/FrontendJuniorEn-cv.pdf"
+  }
+  

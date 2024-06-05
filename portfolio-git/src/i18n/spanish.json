@@ -1,0 +1,41 @@
+{
+  "intro": {
+      "presentation": "Hola, soy Moisés",
+      "job": "Frontend Developer Junior",
+      "intro": " con 1 año de experiencia. Actualmente trabajo como freelancer y en mi tiempo libre compito en ajedrez y toco la guitarra."
+  },
+  "experience": "Experiencia",
+  "cards": {
+      "chess_card": "Diseño y desarrollo de aplicación web con base de datos en MongoDB para consulta de torneos y jugadores. Principal club de ajedrez de la ciudad.",
+      "java_card": "Aplicación para gestión de clientes y pedidos, con sistema de asignación de roles utilizando JPA con Hibernate, y base de datos relacional MySQL."
+  },
+  "education": "Educación",
+  "education_items": {
+      "student": {
+          "title": "Estudiante de grado en Física",
+          "time": "Actualmente"
+      },
+      "certificate": {
+          "title": "Certificación JAVA POO",
+          "time": "Septiembre,2023",
+          "description": "Creación de aplicación para gestión de pedidos y clientes con base de datos MySQL.",
+          "button": "Ver Certificación"
+      },
+      "english": {
+          "title": "Estudios de Inglés Avanzado",
+          "time": "Octubre,2023",
+          "description": "Preparación para certificación C1 en inglés"
+      }
+  },
+  "contact": "Contacto",
+  "placeholder": {
+      "email": "escriba@sucorreo.com",
+      "text": "Escribe tu mensaje aquí...",
+      "button": {
+          "send": "Enviar Mensaje",
+          "sending": "Enviando...",
+          "sent": "Mensaje Enviado!"
+      }
+  },
+  "resume": "/FrontendJunior-cv.pdf"
+}

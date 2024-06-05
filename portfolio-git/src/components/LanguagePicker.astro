@@ -1,0 +1,23 @@
+---
+import  { languages } from '../i18n/ui';
+import { getLangFromUrl, useTranslatedPath} from '../i18n/utils'
+
+const lang = getLangFromUrl(Astro.url);
+
+const translatePath = useTranslatedPath(lang);
+---
+
+<ul class="flex flex-row"><!--Picking , from i18n/ui the language based in the current URL, the text Spanish and english with teh flags -->
+  {Object.entries(languages).map(([lang, { label, flag }]) => ( 
+    <li >
+      <a href={translatePath('/', lang)}>
+        <img src={flag} alt={`${label} flag`} class="rounded-md w-11 h-7 mr-2" />
+      </a>
+    </li>
+  ))}
+</ul>
+
+
+
+
+

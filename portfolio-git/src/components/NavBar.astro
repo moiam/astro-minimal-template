@@ -1,0 +1,28 @@
+---
+import LanguagePicker from "./LanguagePicker.astro";
+import ThemeIcon from './theme/ThemeIcon.astro'
+---
+<header class="nav-bar mx-auto items-center sticky top-0 max-w-4xl mt-10 pt-6 pb-6 z-50 flex flex-shrink w-full gap-2 flex-row 
+ justify-between md:pb-3 px-14 py-8 md:py-5">
+  
+    <ThemeIcon /> <!--Component to switch to light or dark mode -->
+    <LanguagePicker /><!--Component to change between languages -->
+</header>
+
+<style>
+  	.nav-bar{ /* Prepared to do simple animations based in keyframes in the nav */
+		
+		animation: enhance-header linear both;
+		animation-timeline: scroll(root);
+		animation-range: 0 200px;
+
+	}
+
+@keyframes enhance-header{
+	to{
+		backdrop-filter: blur(5px);
+
+		
+	}
+}
+</style>

@@ -1,16 +1,51 @@
-
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
+//https://medium.com/@nohanabil/building-a-multilingual-static-website-a-step-by-step-guide-7af238cc8505 leer sobre esto
+//https://web3forms.com/
+//The form is using WEB3Forms, there you have to create your access Key, and modify the line 48
+import {getI18N,languages} from '../i18n/index'
+import {  defaultLang } from '../i18n/ui';
 
 
 function App() {
-  const [result, setResult] = React.useState("Enviar Mensaje");
+
+  const [lang,setLang]= useState('')
+  useEffect(()=>{
+    
+    const currentUrl = window.location.pathname;
+    const [, lang] = currentUrl.split('/');
+    if (lang in languages){ 
+                    setLang(lang)
+
+                  }
+    else{
+      setLang(defaultLang)
+    };
+  
+  },[])
+  
+   
+    const i18n = getI18N({ currentLocale: lang });
+    console.log(i18n)
+
+
+  console.log(lang);
+  
+
+  const [result, setResult] = useState('');
+  useEffect(()=>{
+    setResult(i18n.placeholder.button.send)
+  },[lang])
+
+
+
+
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    setResult("Enviando...");
+    setResult(i18n.placeholder.button.sending);
     const formData = new FormData(event.target);
 
-    formData.append("access_key", "34bc568a-d1a8-428b-ae57-612cdbea4718");
+    formData.append("access_key", "34bc568a-d1a8-428b-ae57-612cdbea4718");//Here goes your access_key
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -20,7 +55,7 @@ function App() {
     const data = await response.json();
 
     if (data.success) {
-      setResult("Mensaje Enviado!");
+      setResult(i18n.placeholder.button.sent);
       event.target.reset();
     } else {
       console.log("Error", data);
@@ -40,13 +75,13 @@ function App() {
            focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-800 dark:border-gray-600
             dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
             dark:focus:border-blue-500" 
-          placeholder="escriba@sucorreo.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
+          placeholder={i18n.placeholder.email} required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
         </div>
         <div>
           <textarea name="message" className=" p-7 w-full text-sm text-gray-900 bg-gray-50 border border-gray-300 focus:ring-blue-500
            focus:border-blue-500 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400
             dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
-         placeholder="Escribe tu mensaje aquí..." required></textarea>
+         placeholder={i18n.placeholder.text} required></textarea>
         </div>
         <button
           type="submit" 
